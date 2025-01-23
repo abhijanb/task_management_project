@@ -1,13 +1,24 @@
-import { Link, Route, RouterProvider, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Navbar = ({...props}) => {
-    const Navbar = ["dashboard","tasks","issue","milestone","issues","documents","finance","form","pages","users"];
-    return(
+    const Navbar = [
+        { name: "dashboard"},
+        { name: "tasks"},
+        { name: "issue"},
+        { name: "milestone" },
+        { name: "issues"},
+        { name: "documents"},
+        { name: "finance"},
+        { name: "form"},
+        { name: "pages"},
+        { name: "users"}
+      ];
+          return(
         <>
             
                 {
                     Navbar.map((value)=>(
-                        <Link to={`/${value}`}  key={value} {...props}>{value}</Link>
+                        <Link to={`/${value.name}`}  key={value.name} {...props}>{value.name}</Link>
                     )
         )
                 }
@@ -16,3 +27,5 @@ export const Navbar = ({...props}) => {
          </>
     )
 }
+
+
