@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { SideBar } from './Components/Sidebar/Sidebar.components'
 import { Navbar } from './Components/Navbar/Navbar.components'
 import HomeComponent from './Components/Home/HomeComponent';
@@ -38,27 +38,27 @@ function App() {
     { name: "pages", element: <PagesComponent /> },
     { name: "users", element: <UsersComponent /> }
   ];
-  
+
   return (
     <>
       <BrowserRouter>
-      <div className='flex flex-row'>
-<SideBar />
-<div className='flex flex-col'>
+        <div className='flex flex-row'>
+          <SideBar />
+          <div className='flex flex-col'>
 
-    <div className='w-[1150px]  h-full m-2' >
-<Navbar className="m-2"/>
-    </div>
-    <div>
-      <Routes>
-    {combinedArray.map((value) => (
-        <Route key={`/${value.name}`} path={`/${value.name}`} element={value.element}/>
-      ))
-    }
-    </Routes>
-    </div>
-</div>
-      </div>
+            <div className='w-[1150px]  h-full m-3' >
+              <Navbar className="m-2" />
+            </div>
+            <div>
+              <Routes>
+                {combinedArray.map((value) => (
+                  <Route key={`/${value.name}`} path={`/${value.name}`} element={value.element} />
+                ))
+                }
+              </Routes>
+            </div>
+          </div>
+        </div>
       </BrowserRouter>
     </>
   )
